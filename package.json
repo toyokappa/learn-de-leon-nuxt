@@ -14,7 +14,9 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "bootstrap": "^4.4.1",
     "nuxt": "^2.0.0",
-    "ress": "^2.0.4"
+    "ress": "^2.0.4",
+    "vue-scrollto": "^2.18.1",
+    "vue-tasty-burgers": "^1.2.3"
   },
   "devDependencies": {
     "node-sass": "^4.14.0",
