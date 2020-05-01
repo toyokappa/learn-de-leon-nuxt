@@ -66,6 +66,7 @@ export default {
   #navbarMenu
     display: none
   .nav-item
+    font-family: $en-accent-family
     margin-left: 20px
     &.active
       font-weight: bold
