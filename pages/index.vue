@@ -69,6 +69,11 @@ export default {
     return {
       blogPosts
     };
+  },
+  head() {
+    return {
+      title: "Learn de Leon Official Site"
+    };
   }
 };
 </script>

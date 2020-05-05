@@ -44,7 +44,7 @@ export default {
   },
   head() {
     const { title, description, eyecatch } = this.blogPost.fields;
-    const pageTitle = `${title} | 豊川 雄太 Official Blog`;
+    const pageTitle = `${title} | Lean de Loen Official Blog`;
     const imageUrl = `https:${eyecatch.fields.file.url}`;
     return {
       title: pageTitle,

@@ -64,7 +64,7 @@ export default {
   },
   head() {
     return {
-      title: "豊川 雄太 Official Blog"
+      title: "Lean de Loen Official Blog"
     };
   }
 };
