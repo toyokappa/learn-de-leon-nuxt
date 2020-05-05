@@ -16,6 +16,7 @@
         subtitle="Member's Profile"
         description="ともに歩む仲間たち"
       )
+      s-member(:memberList="memberList")
     section.section
       p-section-header#blog(
         title="最新情報"
@@ -49,6 +50,7 @@ import PSectionHeader from "@/components/parts/SectionHeader";
 import PBlogLinkButton from "@/components/parts/BlogLinkButton";
 import SPageTop from "@/components/sections/PageTop";
 import SAbout from "@/components/sections/About";
+import SMember from "@/components/sections/Member";
 import SBlog from "@/components/sections/Blog";
 import SContact from "@/components/sections/Contact";
 
@@ -60,6 +62,7 @@ export default {
     PBlogLinkButton,
     SPageTop,
     SAbout,
+    SMember,
     SBlog,
     SContact
   },
@@ -71,8 +74,15 @@ export default {
     });
     const blogPosts = blogRes.items;
 
+    const memberRes = await app.$ctfClient.getEntries({
+      content_type: "member",
+      order: "fields.position"
+    });
+    const memberList = memberRes.items;
+
     return {
-      blogPosts
+      blogPosts,
+      memberList
     };
   },
   head() {
