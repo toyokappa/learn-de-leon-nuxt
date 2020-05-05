@@ -16,6 +16,10 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:100,200,300,400,700' }
     ]
   },
+  env: {
+    ctfSpaceId: process.env.CTF_SPACE_ID,
+    ctfCdaAccessToken: process.env.CTF_CDA_ACCESS_TOKEN,
+  },
   /*
    ** Customize the progress-bar color
    */
@@ -27,7 +31,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~/plugins/burgerButton.js', ssr: false }],
+  plugins: [
+    { src: '~/plugins/burgerButton.js', ssr: false },
+    { src: '~/plugins/contentful.js' },
+    { src: '~/plugins/dateFormat.js' },
+  ],
   /*
    ** Nuxt.js dev-modules
    */

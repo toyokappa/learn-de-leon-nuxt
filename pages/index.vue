@@ -28,6 +28,7 @@
         subtitle="How To Start"
         description="ご利用前にご安心いただくために"
       )
+      s-blog(:blogPosts="blogPosts")
     section.section
       p-section-header#contact(
         title="お問い合わせ"
@@ -43,6 +44,7 @@ import GFooter from "@/components/global/Footer";
 import PSectionHeader from "@/components/parts/SectionHeader";
 import SPageTop from "@/components/sections/PageTop";
 import SAbout from "@/components/sections/About";
+import SBlog from "@/components/sections/Blog";
 
 export default {
   components: {
@@ -50,7 +52,20 @@ export default {
     GFooter,
     PSectionHeader,
     SPageTop,
-    SAbout
+    SAbout,
+    SBlog
+  },
+  async asyncData({ app }) {
+    const blogRes = await app.$ctfClient.getEntries({
+      content_type: "blogPosts",
+      order: "-sys.createdAt",
+      limit: 3
+    });
+    const blogPosts = blogRes.items;
+
+    return {
+      blogPosts
+    };
   }
 };
 </script>
