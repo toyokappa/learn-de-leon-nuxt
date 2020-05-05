@@ -4,7 +4,7 @@
       n-link.navbar-brand(to="/")
         i.fas.fa-angle-double-left.mr-2
         span Back to 
-        strong TOYOKAWA's Site
+        strong Learn de Leon's Site
 </template>
 
 <style lang="sass" scoped>

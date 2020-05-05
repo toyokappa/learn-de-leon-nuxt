@@ -22,13 +22,14 @@
         subtitle="Recent Blog Posts"
         description="最新の動向をコンテンツとしてお届け"
       )
+      s-blog(:blogPosts="blogPosts")
+      p-blog-link-button
     section.section
       p-section-header#flow(
         title="授業開始までの流れ"
         subtitle="How To Start"
         description="ご利用前にご安心いただくために"
       )
-      s-blog(:blogPosts="blogPosts")
     section.section
       p-section-header#contact(
         title="お問い合わせ"
@@ -42,6 +43,7 @@
 import GHeader from "@/components/global/Header";
 import GFooter from "@/components/global/Footer";
 import PSectionHeader from "@/components/parts/SectionHeader";
+import PBlogLinkButton from "@/components/parts/BlogLinkButton";
 import SPageTop from "@/components/sections/PageTop";
 import SAbout from "@/components/sections/About";
 import SBlog from "@/components/sections/Blog";
@@ -51,6 +53,7 @@ export default {
     GHeader,
     GFooter,
     PSectionHeader,
+    PBlogLinkButton,
     SPageTop,
     SAbout,
     SBlog
