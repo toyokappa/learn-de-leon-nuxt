@@ -23,4 +23,9 @@ a
   &:hover
     text-decoration: none
     opacity: 0.7
+
+.section
+  padding-bottom: 100px
+.section-grey
+  background-color: $light-grey
 </style>

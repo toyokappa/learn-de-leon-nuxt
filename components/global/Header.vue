@@ -86,7 +86,7 @@ export default {
     left: 50%
     transform: translateX(-50%)
     width: 100%
-    background-color: #f8f9fa
+    background-color: $light-grey
     visibility: hidden
     opacity: 0
     transition: 0.3s

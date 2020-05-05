@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  #wrapper
     g-header
     section.section
       s-page-top
@@ -30,12 +30,15 @@
         subtitle="How To Start"
         description="ご利用前にご安心いただくために"
       )
-    section.section
-      p-section-header#contact(
+    section.section.section-grey
+      p-section-header(
         title="お問い合わせ"
         subtitle="Get In Touch"
         description="些細なことでも お気軽に ご相談ください"
+        titleColor="#63AEE5"
+        subtitleColor="black"
       )
+      s-contact
     g-footer
 </template>
 
@@ -47,6 +50,7 @@ import PBlogLinkButton from "@/components/parts/BlogLinkButton";
 import SPageTop from "@/components/sections/PageTop";
 import SAbout from "@/components/sections/About";
 import SBlog from "@/components/sections/Blog";
+import SContact from "@/components/sections/Contact";
 
 export default {
   components: {
@@ -56,7 +60,8 @@ export default {
     PBlogLinkButton,
     SPageTop,
     SAbout,
-    SBlog
+    SBlog,
+    SContact
   },
   async asyncData({ app }) {
     const blogRes = await app.$ctfClient.getEntries({
@@ -79,6 +84,4 @@ export default {
 </script>
 
 <style lang="sass">
-.section
-  margin-bottom: 100px
 </style>

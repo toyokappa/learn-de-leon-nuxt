@@ -4,16 +4,16 @@
     section.section
       p-blog-title
       s-blog-post(:blogPost="blogPost")
-    section.section.section-dark
+    section.section.section-grey
       p-section-header(
         title="お問い合わせ"
         subtitle="Get In Touch"
-        description="気兼ねなく お気軽に ご連絡ください"
-        titleColor="#CC9933"
-        subtitleColor="white"
+        description="些細なことでも お気軽に ご相談ください"
+        titleColor="#63AEE5"
+        subtitleColor="black"
       )
-      // Contact
-    Footer
+      s-contact
+    g-footer
 </template>
 
 <script>
@@ -22,7 +22,7 @@ import PBlogHeader from "@/components/parts/BlogHeader";
 import PBlogTitle from "@/components/parts/BlogTitle";
 import PSectionHeader from "@/components/parts/SectionHeader";
 import SBlogPost from "@/components/sections/BlogPost";
-// import Contact from "@/components/Contact";
+import SContact from "@/components/sections/Contact";
 
 export default {
   components: {
@@ -30,7 +30,8 @@ export default {
     PBlogHeader,
     PBlogTitle,
     PSectionHeader,
-    SBlogPost
+    SBlogPost,
+    SContact
   },
   async asyncData({ app, params, payload }) {
     if (payload) return { blogPost: payload };
@@ -65,9 +66,4 @@ export default {
 </script>
 
 <style lang="sass">
-#wrapper
-  .section
-    padding-bottom: 100px
-  .section-dark
-    background-color: $primary-dark
 </style>

@@ -9,15 +9,15 @@
         :limit="blogRes.limit"
         :skip="blogRes.skip"
       )
-    section.section.section-dark
+    section.section.section-grey
       p-section-header(
         title="お問い合わせ"
         subtitle="Get In Touch"
-        description="気兼ねなく お気軽に ご連絡ください"
-        titleColor="#CC9933"
-        subtitleColor="white"
+        description="些細なことでも お気軽に ご相談ください"
+        titleColor="#63AEE5"
+        subtitleColor="black"
       )
-      // Contact
+      s-contact
     g-footer
 </template>
 
@@ -27,8 +27,8 @@ import PBlogHeader from "@/components/parts/BlogHeader";
 import PBlogTitle from "@/components/parts/BlogTitle";
 import PSectionHeader from "@/components/parts/SectionHeader";
 import SBlog from "@/components/sections/Blog";
+import SContact from "@/components/sections/Contact";
 import MPaging from "@/components/modules/Paging";
-// import Contact from "@/components/Contact";
 
 export default {
   components: {
@@ -37,8 +37,8 @@ export default {
     PBlogTitle,
     PSectionHeader,
     SBlog,
+    SContact,
     MPaging
-    // Contact,
   },
   async asyncData({ route, app, env }) {
     let pageNum = 1;
@@ -71,9 +71,4 @@ export default {
 </script>
 
 <style lang="sass">
-#wrapper
-  .section
-    padding-bottom: 100px
-  .section-dark
-    background-color: $primary-dark
 </style>
