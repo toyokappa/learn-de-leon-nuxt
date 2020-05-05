@@ -16,4 +16,11 @@ html
 *, *:before, *:after
   box-sizing: border-box
   margin: 0
+
+a
+  text-decoration: none
+  transition: 0.3s
+  &:hover
+    text-decoration: none
+    opacity: 0.7
 </style>
