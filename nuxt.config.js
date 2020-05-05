@@ -1,3 +1,5 @@
+const pageLimit = 10
+
 export default {
   mode: 'universal',
   /*
@@ -19,6 +21,7 @@ export default {
   env: {
     ctfSpaceId: process.env.CTF_SPACE_ID,
     ctfCdaAccessToken: process.env.CTF_CDA_ACCESS_TOKEN,
+    pageLimit
   },
   /*
    ** Customize the progress-bar color
@@ -27,7 +30,10 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['ress'],
+  css: [
+    'ress',
+    'github-markdown-css'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -45,12 +51,20 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/style-resources', ['vue-scrollto/nuxt', { duration: 500 }]],
+  modules: [
+    '@nuxtjs/style-resources',
+    '@nuxtjs/markdownit',
+    ['vue-scrollto/nuxt', { duration: 500 }],
+    '@/modules/paging.js'
+  ],
   styleResources: {
     sass: [
       '@/assets/sass/constants.sass',
       '@/assets/sass/plugins.sass'
     ]
+  },
+  markdownit: {
+    injected: true
   },
   /*
    ** Build configuration
