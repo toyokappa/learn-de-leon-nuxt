@@ -15,21 +15,25 @@
       .collapse-menu
         ul.navbar-nav.ml-auto
           li.nav-item
+            n-link.nav-link(v-scroll-to="'#about'" to) ABOUT
+          li.nav-item
             n-link.nav-link(v-scroll-to="'#profile'" to) PROFILE
           li.nav-item
-            n-link.nav-link(v-scroll-to="'#carriculum'" to) CARRICULUM
-          li.nav-item
             n-link.nav-link(v-scroll-to="'#blog'" to) BLOG
+          li.nav-item
+            n-link.nav-link(v-scroll-to="'#flow'" to) FLOW
           li.nav-item
             n-link.nav-link(v-scroll-to="'#contact'" to) CONTACT
     #navbarMenu.container
       ul.navbar-nav(@click="toggleActive")
-        li.nav-item.active
+        li.nav-item
+          n-link.nav-link(v-scroll-to="'#about'" to) ABOUT
+        li.nav-item
           n-link.nav-link(v-scroll-to="'#profile'" to) PROFILE
         li.nav-item
-          n-link.nav-link(v-scroll-to="'#carriculum'" to) CARRICULUM
-        li.nav-item
           n-link.nav-link(v-scroll-to="'#blog'" to) BLOG
+        li.nav-item
+          n-link.nav-link(v-scroll-to="'#flow'" to) FLOW
         li.nav-item
           n-link.nav-link(v-scroll-to="'#contact'" to) CONTACT
 </template>

@@ -1,5 +1,5 @@
 <template lang="pug">
-  #about.about
+  .about
     .process-container
       .process.know
         img(src="~/assets/images/know.svg")
