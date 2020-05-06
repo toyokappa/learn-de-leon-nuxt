@@ -3,9 +3,26 @@
     .container
       ul.member-list
         li.member-item(v-for="member in memberList" :key="member.fields.position")
-          .photo(:style="`background-image: url(${memberPhoto(member.fields.photo)})`")
+          .photo(
+            :style="`background-image: url(${memberPhoto(member.fields.photo)})`"
+            @click="openProfile(member)"
+          )
             .name {{ member.fields.name }}
           .title {{ member.fields.title }}
+    .member-profile(
+      v-if="existsProfile"
+      @click="closeProfile()"
+    )
+      .container
+        .profile-top.row
+          .col-lg-3.col-sm-4
+            .photo(:style="`background-image: url(${memberPhoto(memberProfile.fields.photo)})`")
+          .col-lg-9.col-sm-8
+            .name {{ memberProfile.fields.name }}
+            .title {{ memberProfile.fields.title }}
+            .resume(v-html="parseText(memberProfile.fields.resume)")
+        .profile-bottom
+          .introduction(v-html="parseText(memberProfile.fields.introduction)")
 </template>
 
 <script>
@@ -18,9 +35,29 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      memberProfile: {}
+    };
+  },
   methods: {
     memberPhoto(photo) {
       return photo ? photo.fields.file.url : noPhoto;
+    },
+    parseText(text) {
+      if (text) return text.replace(/\n/g, "<br>");
+      return "";
+    },
+    openProfile(member) {
+      this.memberProfile = member;
+    },
+    closeProfile() {
+      this.memberProfile = {};
+    }
+  },
+  computed: {
+    existsProfile() {
+      return Object.keys(this.memberProfile).length > 0;
     }
   }
 };
@@ -45,6 +82,7 @@ export default {
         margin-bottom: 5px
         position: relative
         overflow: hidden
+        cursor: pointer
         @include media-breakpoint-up(sm)
           width: 150px
           height: 150px
@@ -64,4 +102,32 @@ export default {
         color: $primary-grey
         font-size: 12px
         text-align: center
+  .member-profile
+    color: white
+    width: 100%
+    height: 100vh
+    background-color: rgba(0, 0, 0, 0.9)
+    padding: 100px 0
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 1031 // Headerよりも上の層
+    .profile-top
+      padding-bottom: 50px
+      border-bottom: 1px solid $primary-grey
+      margin-bottom: 50px
+      .photo
+        width: 100%
+        padding-bottom: 100%
+        background-size: cover
+        background-position: center center
+        border-radius: 50%
+      .name
+        font-family: $ja-accent-family
+        font-size: 24px
+      .title
+        color: $secondary-grey
+        font-size: 14px
+      .resume
+        margin-top: 15px
 </style>
