@@ -1,0 +1,131 @@
+<template lang="pug">
+  .flow
+    .container
+      ul.timeline
+        li.tl-header
+        li.tl-item
+          .tl-wrap
+            .tl-content.box
+              .box-arrow-left
+              .box-header テスト
+              .box-divider
+              .box-body テスト
+        li.tl-item.tl-left
+          .tl-wrap
+            .tl-content.box
+              .box-arrow-right
+              .box-header テスト
+              .box-divider
+              .box-body テスト
+</template>
+
+<style lang="sass" scoped>
+.timeline
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+  list-style: none
+  .tl-item
+    margin-left: 50%
+    .tl-wrap
+      padding: 15px 0 15px 20px
+      border-style: solid
+      border-width: 0 0 0 2px
+      margin: 0 0 0 -1px
+      &:before
+        content: ""
+        width: 10px
+        height: 10px
+        background-color: white
+        box-shadow: 0 0 0 4px white
+        border-color: inherit
+        border-width: 3px
+        border-radius: 50%
+        border-style: solid
+        margin: 0 0 0 -26px
+        position: relative
+        top: 13px
+        float: left
+      .tl-content
+        width: 100%
+        background-color: #63AEE5
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.15)
+        padding: 0.5rem 1rem
+        margin-bottom: 1.5rem
+        position: relative
+        .box-arrow-right
+          position: absolute
+          top: 18px
+          right: 0
+          margin-top: -7px
+          &:before
+            content: ""
+            width: 0
+            height: 0
+            border-width: 7px 0 7px 7px
+            border-style: solid
+            border-color: transparent
+            position: absolute
+            left: 0
+          &:after
+            content: ""
+            width: 0
+            height: 0
+            border-width: 6px 0 6px 6px
+            border-style: solid
+            border-top-color: transparent
+            border-bottom-color: transparent
+            border-right-color: transparent
+            border-left-color: #63AEE5
+            position: absolute
+            top: 1px
+            left: 0
+        .box-arrow-left
+          position: absolute
+          top: 18px
+          left: 0
+          margin-top: -7px
+          &:before
+            content: ""
+            width: 0
+            height: 0
+            border-width: 7px 7px 7px 0
+            border-style: solid
+            border-color: transparent
+            position: absolute
+            right: 0
+          &:after
+            content: ""
+            width: 0
+            height: 0
+            border-width: 6px 6px 6px 0
+            border-style: solid
+            border-top-color: transparent
+            border-bottom-color: transparent
+            border-right-color: #63AEE5
+            border-left-color: transparent
+            position: absolute
+            top: 1px
+            right: 0
+    &.tl-left
+      margin-left: 0
+      margin-right: 50%
+      .tl-wrap
+        padding: 15px 20px 15px 0
+        border-width: 0 2px 0 0
+        margin: 0 -1px 0 0
+        &:before
+          margin: 0 -26px 0 0
+          float: right
+  .box
+    color: white
+    font-size: 14px
+    .box-header
+      padding: 1rem
+    .box-divider
+      border-bottom: 1px solid white
+      margin: 0 16px
+      height: 0
+    .box-body
+      padding: 1rem
+</style>

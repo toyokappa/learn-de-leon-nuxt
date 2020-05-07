@@ -31,6 +31,7 @@
         subtitle="How To Start"
         description="ご利用前にご安心いただくために"
       )
+      s-flow
     section.section.section-grey
       p-section-header(
         title="お問い合わせ"
@@ -52,6 +53,7 @@ import SPageTop from "@/components/sections/PageTop";
 import SAbout from "@/components/sections/About";
 import SMember from "@/components/sections/Member";
 import SBlog from "@/components/sections/Blog";
+import SFlow from "@/components/sections/Flow";
 import SContact from "@/components/sections/Contact";
 
 export default {
@@ -64,6 +66,7 @@ export default {
     SAbout,
     SMember,
     SBlog,
+    SFlow,
     SContact
   },
   async asyncData({ app }) {
