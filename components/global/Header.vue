@@ -98,7 +98,7 @@ export default {
       padding: 0 20px
       .nav-item
         padding: 20px 0
-        border-bottom: 1px solid black
+        border-bottom: 1px solid $secondary-grey
         margin-left: 0 !important
         &:last-child
           border-bottom: none
