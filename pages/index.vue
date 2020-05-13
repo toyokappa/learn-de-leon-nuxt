@@ -33,7 +33,7 @@
       )
       s-flow
     section.section.section-grey
-      p-section-header(
+      p-section-header#contact(
         title="お問い合わせ"
         subtitle="Get In Touch"
         description="些細なことでも お気軽に ご相談ください"

@@ -40,6 +40,10 @@
               )
                 i.fas.fa-check.mr-2
                 | SUBMIT
+      .access
+        | 〒370-0603 群馬県邑楽郡邑楽町中野2730-4
+        br
+        | TEL 0276-78-3270
       ul.social-links
         li.item
           a.link(href="https://twitter.com/learn_de_leon" target="new")
@@ -118,10 +122,18 @@ export default {
     border: none
     padding: 15px 25px
     margin-left: auto
+  .access
+    color: $primary-grey
+    font-family: $ja-accent-family
+    letter-spacing: 3px
+    text-align: center
+    margin-top: 100px
+    @include media-breakpoint-down(xs)
+      font-size: 12px
   .social-links
     list-style: none
     text-align: center
-    margin-top: 60px
+    margin-top: 20px
     .item
       display: inline
       .link

@@ -6,6 +6,9 @@
           img(src="~/assets/images/tampopo.jpg")
         .col-lg-6.order-lg-1
           .description
+            | 「ランデレオン」は、群馬県邑楽郡を中心に展開している家庭教師事業団体です。
+            br
+            br
             | 「ランデレオン」という名前はは英語の「Learn（学ぶ）」とスペイン語の「ディエンテ・デ・レオン（たんぽぽ）」の2つの言葉を組み合わせて作りました。
             br
             br
