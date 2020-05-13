@@ -9,6 +9,7 @@
             type="spin"
             color="black"
             size="s"
+            :active="isActive"
             @toggle="toggleNavMenu"
             ref="burgerButton"
           )
@@ -42,7 +43,8 @@
 export default {
   data() {
     return {
-      activeLink: ""
+      activeLink: "",
+      isActive: false
     };
   },
   methods: {
@@ -51,7 +53,7 @@ export default {
       active ? nav.classList.add("visible") : nav.classList.remove("visible");
     },
     toggleActive() {
-      this.$refs.burgerButton.toggle();
+      this.isActive = !this.isActive;
     }
   }
 };
