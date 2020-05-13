@@ -14,13 +14,15 @@
       @click="closeProfile()"
     )
       .container
-        .profile-top.row
-          .col-lg-3.col-sm-4
-            .photo(:style="`background-image: url(${memberPhoto(memberProfile.fields.photo)})`")
-          .col-lg-9.col-sm-8
-            .name {{ memberProfile.fields.name }}
-            .title {{ memberProfile.fields.title }}
-            .resume(v-html="parseText(memberProfile.fields.resume)")
+        .profile-top
+          .row
+            .col-lg-3.col-sm-4.col-5
+              .photo(:style="`background-image: url(${memberPhoto(memberProfile.fields.photo)})`")
+            .col-lg-9.col-sm-8.col-7
+              .name {{ memberProfile.fields.name }}
+              .title {{ memberProfile.fields.title }}
+              .resume(v-html="parseText(memberProfile.fields.resume)")
+          .resume-sp(v-html="parseText(memberProfile.fields.resume)")
         .profile-bottom
           .introduction(v-html="parseText(memberProfile.fields.introduction)")
 </template>
@@ -107,15 +109,22 @@ export default {
     width: 100%
     height: 100vh
     background-color: rgba(0, 0, 0, 0.9)
-    padding: 100px 0
     position: fixed
     top: 0
     left: 0
     z-index: 1031 // Headerよりも上の層
+    @include media-breakpoint-up(sm)
+      padding: 100px 0
+    @include media-breakpoint-down(xs)
+      padding: 30px 0
     .profile-top
-      padding-bottom: 50px
       border-bottom: 1px solid $primary-grey
-      margin-bottom: 50px
+      @include media-breakpoint-up(sm)
+        padding-bottom: 50px
+        margin-bottom: 50px
+      @include media-breakpoint-down(xs)
+        padding-bottom: 20px
+        margin-bottom: 20px
       .photo
         width: 100%
         padding-bottom: 100%
@@ -124,10 +133,27 @@ export default {
         border-radius: 50%
       .name
         font-family: $ja-accent-family
-        font-size: 24px
+        @include media-breakpoint-up(sm)
+          font-size: 24px
+        @include media-breakpoint-down(xs)
+          margin-top: 10px
+          font-size: 18px
       .title
         color: $secondary-grey
-        font-size: 14px
+        @include media-breakpoint-up(sm)
+          font-size: 14px
+        @include media-breakpoint-down(xs)
+          font-size: 12px
       .resume
         margin-top: 15px
+        @include media-breakpoint-down(xs)
+          display: none
+      .resume-sp
+        font-size: 12px
+        margin-top: 15px
+        @include media-breakpoint-up(sm)
+          display: none
+    .profile-bottom
+      @include media-breakpoint-down(xs)
+        font-size: 12px
 </style>
