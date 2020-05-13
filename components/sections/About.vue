@@ -1,18 +1,8 @@
 <template lang="pug">
   .about
     .process-container
-      .process.know
-        img(src="~/assets/images/know.svg")
-        .label Know (知る)
-      .process.grow
-        img(src="~/assets/images/grow.svg")
-        .label Grow (成長する)
-      .process.enjoy
-        img(src="~/assets/images/enjoy.svg")
-        .label Enjoy (楽しむ)
-      .process.want
-        img(src="~/assets/images/want.svg")
-        .label Want (したい)
+      .process.learn
+        img(src="~/assets/images/learn.svg")
 </template>
 
 <style lang="sass" scoped>
@@ -24,8 +14,8 @@
       text-align: center
       margin: 0 30px
       img
-        width: 100%
-        max-width: 200px
+        width: 100vw
+        max-width: 600px
         height: auto
-        margin-bottom: 10px
+        padding: 0 40px 10px
 </style>
