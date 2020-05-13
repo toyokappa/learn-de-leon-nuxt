@@ -7,16 +7,48 @@
           .tl-wrap
             .tl-content.box
               .box-arrow-left
-              .box-header テスト
+              .box-header まずは無料相談
               .box-divider
-              .box-body テスト
+              .box-body
+                | お子様の学習に関してのお悩みをお聞かせください。
+                | まずはお悩みの解決をする方法を一緒に考えましょう。
+                | 課題を整理し、ご家族として対応できる部分、我々が解決する部分を整理する面談を実施しましょう。
         li.tl-item.tl-left
           .tl-wrap
             .tl-content.box
               .box-arrow-right
-              .box-header テスト
+              .box-header お見積り
               .box-divider
-              .box-body テスト
+              .box-body
+                | 解決すべき課題を整理し、おすすめのプランをご提案いたします。
+                | プランの内容、料金に関してご理解いただいた上でご契約をいただきたいので、ご理解いただけるよう説明を差し上げます。
+        li.tl-item
+          .tl-wrap
+            .tl-content.box
+              .box-arrow-left
+              .box-header 無料体験授業
+              .box-divider
+              .box-body
+                | 実際にプランに即した授業を無料でご体験いただきます。
+                | お子様に体験いただくことにより、学習に対する意欲を高められるとともに、我々の授業の携帯を理科いただくことが目的となります。
+        li.tl-item.tl-left
+          .tl-wrap
+            .tl-content.box
+              .box-arrow-right
+              .box-header お申し込み
+              .box-divider
+              .box-body
+                | 体験授業を受けていただき、ご納得いただけた方に限りお申し込みに進んでいただきます。
+                | 授業のスケジュール調整も行いますので、直近のご予定、ご希望のご予定を控えていただけるとスムーズです。
+        li.tl-item
+          .tl-wrap
+            .tl-content.box
+              .box-arrow-left
+              .box-header 授業開始！
+              .box-divider
+              .box-body
+                | ここまでお疲れさまでした。無事お申し込みも完了し、授業開始となります。
+                | ここからがスタートです。お子様、ご家族様と伴走し、学習が楽しくなる環境づくりに努めてまいります。
 </template>
 
 <style lang="sass" scoped>
@@ -121,6 +153,8 @@
     color: white
     font-size: 14px
     .box-header
+      font-size: 16px
+      font-weight: bold
       padding: 1rem
     .box-divider
       border-bottom: 1px solid white
