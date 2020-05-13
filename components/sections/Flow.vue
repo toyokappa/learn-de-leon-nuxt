@@ -6,7 +6,7 @@
         li.tl-item
           .tl-wrap
             .tl-content.box
-              .box-arrow-left
+              .box-arrow
               .box-header まずは無料相談
               .box-divider
               .box-body
@@ -16,25 +16,25 @@
         li.tl-item.tl-left
           .tl-wrap
             .tl-content.box
-              .box-arrow-right
+              .box-arrow
               .box-header お見積り
               .box-divider
               .box-body
-                | 解決すべき課題を整理し、おすすめのプランをご提案いたします。
-                | プランの内容、料金に関してご理解いただいた上でご契約をいただきたいので、ご理解いただけるよう説明を差し上げます。
+                | 解決すべき課題の整理ができたら、課題に即したプランをご提案いたします。
+                | プランの内容、料金に関してご理解いただいた上でごお申し込みをいただきたいので、ご理解いただけるよう説明を差し上げます。
         li.tl-item
           .tl-wrap
             .tl-content.box
-              .box-arrow-left
+              .box-arrow
               .box-header 無料体験授業
               .box-divider
               .box-body
                 | 実際にプランに即した授業を無料でご体験いただきます。
-                | お子様に体験いただくことにより、学習に対する意欲を高められるとともに、我々の授業の携帯を理科いただくことが目的となります。
+                | お子様に体験いただくことにより、我々の授業の形態を理解いただくとともに、学習の意欲を高めていただくことが目的となります。
         li.tl-item.tl-left
           .tl-wrap
             .tl-content.box
-              .box-arrow-right
+              .box-arrow
               .box-header お申し込み
               .box-divider
               .box-body
@@ -43,7 +43,7 @@
         li.tl-item
           .tl-wrap
             .tl-content.box
-              .box-arrow-left
+              .box-arrow
               .box-header 授業開始！
               .box-divider
               .box-body
@@ -58,7 +58,10 @@
   box-sizing: border-box
   list-style: none
   .tl-item
-    margin-left: 50%
+    @include media-breakpoint-up(sm)
+      margin-left: 50%
+    @include media-breakpoint-down(xs)
+      margin-left: 0
     .tl-wrap
       padding: 15px 0 15px 20px
       border-style: solid
@@ -85,34 +88,7 @@
         padding: 0.5rem 1rem
         margin-bottom: 1.5rem
         position: relative
-        .box-arrow-right
-          position: absolute
-          top: 18px
-          right: 0
-          margin-top: -7px
-          &:before
-            content: ""
-            width: 0
-            height: 0
-            border-width: 7px 0 7px 7px
-            border-style: solid
-            border-color: transparent
-            position: absolute
-            left: 0
-          &:after
-            content: ""
-            width: 0
-            height: 0
-            border-width: 6px 0 6px 6px
-            border-style: solid
-            border-top-color: transparent
-            border-bottom-color: transparent
-            border-right-color: transparent
-            border-left-color: #63AEE5
-            position: absolute
-            top: 1px
-            left: 0
-        .box-arrow-left
+        .box-arrow
           position: absolute
           top: 18px
           left: 0
@@ -139,16 +115,30 @@
             position: absolute
             top: 1px
             right: 0
-    &.tl-left
-      margin-left: 0
-      margin-right: 50%
-      .tl-wrap
-        padding: 15px 20px 15px 0
-        border-width: 0 2px 0 0
-        margin: 0 -1px 0 0
-        &:before
-          margin: 0 -26px 0 0
-          float: right
+    @include media-breakpoint-up(sm)
+      &.tl-left
+        margin-left: 0
+        margin-right: 50%
+        .tl-wrap
+          padding: 15px 20px 15px 0
+          border-width: 0 2px 0 0
+          margin: 0 -1px 0 0
+          &:before
+            margin: 0 -26px 0 0
+            float: right
+          .box-arrow
+            left: auto
+            right: 0
+            &:before
+              border-width: 7px 0 7px 7px
+              right: auto
+              left: 0
+            &:after
+              border-width: 6px 0 6px 6px
+              border-right-color: transparent
+              border-left-color: #63AEE5
+              right: auto
+              left: 0
   .box
     color: white
     font-size: 14px
