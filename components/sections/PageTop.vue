@@ -13,6 +13,14 @@
   background-image: url("~assets/images/top_image.jpg")
   background-size: cover
   background-position: center center
+  &:after
+    content: ''
+    width: 100%
+    height: 100vh
+    background-color: rgba(0, 0, 0, 0.15)
+    position: absolute
+    top: 0
+    left: 0
   .title-area
     position: absolute
     top: 50%
@@ -23,6 +31,7 @@
     text-align: center
     width: 100%
     margin: auto
+    z-index: 100
     @include media-breakpoint-up(sm)
       .title
         font-size: 60px
