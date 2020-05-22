@@ -49,7 +49,6 @@ export default {
 
 <style lang="sass">
 .hooper
-  height: inherit
   .hooper-pagination
     .hooper-indicators
       .hooper-indicator
@@ -62,6 +61,8 @@ export default {
 </style>
 
 <style lang="sass" scoped>
+.hooper
+  height: 100%
 .page-top
   position: relative
   width: 100%
