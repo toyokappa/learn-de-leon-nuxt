@@ -46,11 +46,14 @@
         | TEL 0276-78-3270
       ul.social-links
         li.item
-          a.link(href="https://twitter.com/learn_de_leon" target="new")
+          a.link(href="https://twitter.com/learndeleon" target="new")
             i.fab.fa-twitter
         li.item
           a.link(href="https://instagram.com/learn_de_leon" target="new")
             i.fab.fa-instagram
+        li.item
+          a.link(href="https://line.me/ti/g2/ld9-FZAJ6faVdxfHpUnkVg" target="new")
+            i.fab.fa-line
 </template>
 
 <script>
