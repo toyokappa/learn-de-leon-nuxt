@@ -17,20 +17,21 @@
           .tl-wrap
             .tl-content.box
               .box-arrow
-              .box-header お見積り
+              .box-header 学力診断 & 無料体験授業
               .box-divider
               .box-body
-                | 解決すべき課題の整理ができたら、課題に即したプランをご提案いたします。
-                | プランの内容、料金に関してご理解いただいた上でごお申し込みをいただきたいので、ご理解いただけるよう説明を差し上げます。
+                | 学習レベルを確認するため、学力診断テストを実施します。
+                | 学力や今回の課題に応じて適した授業を無料でご体験いただきます。
+                | お子様に体験いただくことにより、我々の授業の形態を理解いただくとともに、学習の意欲を高めていただくことが目的となります。
         li.tl-item
           .tl-wrap
             .tl-content.box
               .box-arrow
-              .box-header 無料体験授業
+              .box-header お見積り
               .box-divider
               .box-body
-                | 実際にプランに即した授業を無料でご体験いただきます。
-                | お子様に体験いただくことにより、我々の授業の形態を理解いただくとともに、学習の意欲を高めていただくことが目的となります。
+                | 学力診断テスト、無料体験授業を経て、得られた情報から改めて適切なプランをご提案いたします。
+                | プランの内容、料金に関してご理解いただいた上でごお申し込みをいただきたいので、ご理解いただけるよう説明を差し上げます。
         li.tl-item.tl-left
           .tl-wrap
             .tl-content.box
@@ -143,7 +144,7 @@
     color: white
     font-size: 14px
     .box-header
-      font-size: 16px
+      font-size: 18px
       font-weight: bold
       padding: 1rem
     .box-divider
