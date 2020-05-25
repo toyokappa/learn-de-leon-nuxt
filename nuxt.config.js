@@ -1,5 +1,18 @@
 const pageLimit = 10
 
+const fetchBlogRes = async () => {
+  const contentful = require('contentful')
+  const client = contentful.createClient({
+    space: process.env.CTF_SPACE_ID,
+    accessToken: process.env.CTF_CDA_ACCESS_TOKEN
+  })
+  const blogRes = await client.getEntries({
+    content_type: 'blogPosts',
+    order: "-sys.createdAt",
+  })
+  return blogRes
+}
+
 export default {
   mode: 'universal',
   /*
@@ -69,6 +82,7 @@ export default {
     '@nuxtjs/style-resources',
     '@nuxtjs/toast',
     '@nuxtjs/markdownit',
+    '@nuxtjs/sitemap',
     ['vue-scrollto/nuxt', { duration: 500 }],
     '@/modules/paging.js'
   ],
@@ -77,6 +91,21 @@ export default {
       '@/assets/sass/constants.sass',
       '@/assets/sass/plugins.sass'
     ]
+  },
+  generate: {
+    async routes() {
+      const blogRes = await fetchBlogRes()
+      const totalPages = Math.ceil(blogRes.total / pageLimit);
+      const pageRange = [...Array(totalPages).keys()]
+      let urls = pageRange.map(pageNum => ({
+        route: `/blogs/page/${pageNum + 1}`
+      }))
+      urls = urls.concat(blogRes.items.map(item => ({
+        route: `/blogs/${item.sys.id}`,
+        payload: item
+      })))
+      return urls
+    }
   },
   toast: {
     position: 'bottom-center',
@@ -89,6 +118,11 @@ export default {
   },
   markdownit: {
     injected: true
+  },
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://learndeleon.com',
+    gzip: true
   },
   /*
    ** Build configuration
