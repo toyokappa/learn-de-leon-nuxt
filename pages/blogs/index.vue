@@ -63,9 +63,9 @@ export default {
     };
   },
   head() {
-    pageTitle = "ランデレオン Official Blog";
-    imageUrl = "https://learndeleon.com/twitter_image.jpg";
-    description =
+    const pageTitle = "ランデレオン Official Blog";
+    const imageUrl = "https://learndeleon.com/twitter_image.jpg";
+    const description =
       "群馬県邑楽郡にて家庭教師事業を展開しているランデレオンの活動状況、お知らせをコンテンツとしてお届けしています。最新情報をお探しの方はこちらのブログを御覧ください。";
     return {
       title: PageTitle,
