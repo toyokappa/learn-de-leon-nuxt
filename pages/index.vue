@@ -89,8 +89,23 @@ export default {
     };
   },
   head() {
+    pageTitle = "ランデレオン Official Site";
+    imageUrl = "https://learndeleon.com/twitter_image.jpg";
+    description =
+      "群馬県邑楽郡にて家庭教師事業を展開しているランデレオンの公式サイトです。教育における想い、運営者紹介、サービス体系紹介などをお届けしております。";
     return {
-      title: "Learn de Leon Official Site"
+      title: PageTitle,
+      meta: [
+        { name: "description", content: description },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:image", content: imageUrl },
+        { name: "twitter:title", content: pageTitle },
+        { name: "twitter:description", content: description },
+        { property: "og:title", content: pageTitle },
+        { property: "og:type", content: "website" },
+        { property: "og:image", content: imageUrl },
+        { property: "og:description", content: description }
+      ]
     };
   }
 };

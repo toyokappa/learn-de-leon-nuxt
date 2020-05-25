@@ -63,8 +63,23 @@ export default {
     };
   },
   head() {
+    pageTitle = "ランデレオン Official Blog";
+    imageUrl = "https://learndeleon.com/twitter_image.jpg";
+    description =
+      "群馬県邑楽郡にて家庭教師事業を展開しているランデレオンの活動状況、お知らせをコンテンツとしてお届けしています。最新情報をお探しの方はこちらのブログを御覧ください。";
     return {
-      title: "Lean de Loen Official Blog"
+      title: PageTitle,
+      meta: [
+        { name: "description", content: description },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:image", content: imageUrl },
+        { name: "twitter:title", content: pageTitle },
+        { name: "twitter:description", content: description },
+        { property: "og:title", content: pageTitle },
+        { property: "og:type", content: "website" },
+        { property: "og:image", content: imageUrl },
+        { property: "og:description", content: description }
+      ]
     };
   }
 };

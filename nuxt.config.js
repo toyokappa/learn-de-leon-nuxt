@@ -25,7 +25,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' },
       { name: 'msapplication-TileColor', content: '#ff0000' },
       { name: 'theme-color', content: '#ff0000' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { name: 'keywords', content: 'ランデレオン, learn de leon, 群馬 家庭教師, 邑楽 家庭教師, 教育 エンタメ' }
     ],
     link: [
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
