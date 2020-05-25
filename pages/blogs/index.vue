@@ -68,7 +68,7 @@ export default {
     const description =
       "群馬県邑楽郡にて家庭教師事業を展開しているランデレオンの活動状況、お知らせをコンテンツとしてお届けしています。最新情報をお探しの方はこちらのブログを御覧ください。";
     return {
-      title: PageTitle,
+      title: pageTitle,
       meta: [
         { name: "description", content: description },
         { name: "twitter:card", content: "summary_large_image" },
