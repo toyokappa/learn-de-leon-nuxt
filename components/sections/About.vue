@@ -3,7 +3,7 @@
     .container
       .row.about-section
         .col-lg-6.order-lg-2.mb-sx-3
-          img(src="~/assets/images/tampopo.jpg")
+          img(v-lazy="tampopo")
         .col-lg-6.order-lg-1
           .description
             | 「ランデレオン」は、群馬県邑楽郡を中心に展開している家庭教師事業団体です。
@@ -21,7 +21,7 @@
             | 実際の授業でも、お子さんの自主性を育てることに重きをおいています。最終的には我々のもとを巣立ち、自ら学習を進めてもらえるような土壌づくりを目標としています。
       .row
         .col-lg-6.mb-sx-3
-          img(src="~/assets/images/learn.svg")
+          img(v-lazy="learn")
         .col-lg-6
           .description
             | 私達は、「知る」ことで「成長する」、「成長する」ことで「楽しくなる」、「楽しくなる」ことで「また知りたくなる」、このサイクルを大事にしています。
@@ -44,6 +44,20 @@
             br
             | 100人いれば100通りの教え方が必要であると考えです。そういった考えで一人ひとりに合った学習サポートを行うことをお約束します。
 </template>
+
+<script>
+import tampopo from "@/assets/images/tampopo.jpg"
+import learn from "@/assets/images/learn.svg"
+
+export default {
+  data() {
+    return {
+      tampopo,
+      learn
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .about

@@ -4,7 +4,7 @@
       ul.member-list
         li.member-item(v-for="member in memberList" :key="member.fields.position")
           .photo(
-            :style="`background-image: url(${memberPhoto(member.fields.photo)})`"
+            v-lazy:background-image="memberPhoto(member.fields.photo)"
             @click="openProfile(member)"
           )
             .name {{ member.fields.name }}
@@ -17,7 +17,7 @@
         .profile-top
           .row
             .col-lg-3.col-sm-4.col-5
-              .photo(:style="`background-image: url(${memberPhoto(memberProfile.fields.photo)})`")
+              .photo(v-lazy:background-image="memberPhoto(memberProfile.fields.photo)")
             .col-lg-9.col-sm-8.col-7
               .name {{ memberProfile.fields.name }}
               .title {{ memberProfile.fields.title }}

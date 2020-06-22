@@ -67,7 +67,8 @@ export default {
     { src: '~/plugins/burgerButton.js', ssr: false },
     { src: '~/plugins/contentful.js' },
     { src: '~/plugins/dateFormat.js' },
-    { src: '~/plugins/firebaseFunctions.js' }
+    { src: '~/plugins/firebaseFunctions.js' },
+    { src: '~/plugins/lazyLoad.js' },
   ],
   /*
    ** Nuxt.js dev-modules

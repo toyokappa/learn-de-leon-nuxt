@@ -2,12 +2,12 @@
   #pageTop
     hooper(:settings="hooperSettings")
       slide
-        .page-top(:style="{ backgroundImage: `url('${topImage1}')`}")
+        .page-top(v-lazy:backgroundImage="topImage1")
           .title-area
             .title-lg Learn de Leon
             .subtitle 「やる」だけじゃない、思考力を育てる
       slide
-        .page-top(:style="{ backgroundImage: `url('${topImage2}')`}")
+        .page-top(v-lazy:backgroundImage="topImage2")
           .title-area
             .title-sm 教育を「エンタメ」に
             .subtitle Education to Entertainment
