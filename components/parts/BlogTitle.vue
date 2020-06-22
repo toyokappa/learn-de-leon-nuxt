@@ -1,7 +1,7 @@
 <template lang="pug">
   .section-header
     .section-title
-      n-link(to="/blogs") 学ぶログ（タイトル適当）
+      n-link(to="/blogs") 蒲公英のたより
     h1.section-subtitle Learn de Leon Official Blog
     .section-description 最新の動向をコンテンツとしてお届け
 </template>
