@@ -4,6 +4,10 @@
     section.section
       p-blog-title
       s-blog-post(:blogPost="blogPost")
+      m-next-prev(
+        :nextPost="nextPost"
+        :prevPost="prevPost"
+      )
     section.section.section-grey
       p-section-header(
         title="お問い合わせ"
@@ -22,6 +26,7 @@ import PBlogHeader from "@/components/parts/BlogHeader";
 import PBlogTitle from "@/components/parts/BlogTitle";
 import PSectionHeader from "@/components/parts/SectionHeader";
 import SBlogPost from "@/components/sections/BlogPost";
+import MNextPrev from "@/components/modules/NextPrev";
 import SContact from "@/components/sections/Contact";
 
 export default {
@@ -31,17 +36,40 @@ export default {
     PBlogTitle,
     PSectionHeader,
     SBlogPost,
+    MNextPrev,
     SContact
   },
   async asyncData({ app, params, payload }) {
-    if (payload) return { blogPost: payload };
+    let blogPost
+    if (payload) {
+      blogPost = payload
+    } else {
+      const blogRes = await app.$ctfClient.getEntries({
+        content_type: "blogPosts",
+        "sys.id": params.id
+      });
+      blogPost = blogRes.items[0]
+    }
 
-    const blogRes = await app.$ctfClient.getEntries({
+    const prevRes = await app.$ctfClient.getEntries({
       content_type: "blogPosts",
-      "sys.id": params.id
-    });
-    const blogPost = blogRes.items[0];
-    return { blogPost };
+      "sys.createdAt[lt]": blogPost.sys.createdAt,
+      order: "-sys.createdAt",
+      limit: 1
+    })
+    const prevPost = prevRes.items[0]
+    const nextRes = await app.$ctfClient.getEntries({
+      content_type: "blogPosts",
+      "sys.createdAt[gt]": blogPost.sys.createdAt,
+      order: "sys.createdAt",
+      limit: 1
+    })
+    const nextPost = nextRes.items[0]
+    return {
+      blogPost,
+      prevPost,
+      nextPost
+    };
   },
   head() {
     const { title, description, eyecatch } = this.blogPost.fields;
