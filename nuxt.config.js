@@ -118,7 +118,8 @@ export default {
     }
   },
   markdownit: {
-    injected: true
+    injected: true,
+    html: true
   },
   sitemap: {
     path: '/sitemap.xml',
