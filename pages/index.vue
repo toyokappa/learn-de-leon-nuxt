@@ -31,7 +31,7 @@
       subtitle="How To Start",
       description="ご利用前にご安心いただくために"
     )
-    s-flow
+    s-flow(:flow="flowItem")
   section.section.section-grey
     p-section-header#contact(
       title="お問い合わせ",
@@ -90,10 +90,18 @@ export default {
     });
     const aboutItem = aboutRes.items[0];
 
+    const flowRes = await app.$ctfClient.getEntries({
+      content_type: "flow",
+      order: "sys.createdAt",
+      limit: 1,
+    });
+    const flowItem = flowRes.items[0];
+
     return {
       blogPosts,
       memberList,
       aboutItem,
+      flowItem,
     };
   },
   head() {

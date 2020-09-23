@@ -1,56 +1,29 @@
 <template lang="pug">
-  .flow
-    .container
-      ul.timeline
-        li.tl-header
-        li.tl-item
-          .tl-wrap
-            .tl-content.box
-              .box-arrow
-              .box-header まずは無料相談
-              .box-divider
-              .box-body
-                | お子様の学習に関してのお悩みをお聞かせください。
-                | まずはお悩みの解決をする方法を一緒に考えましょう。
-                | 課題を整理し、ご家族として対応できる部分、我々が解決する部分を整理する面談を実施しましょう。
-        li.tl-item.tl-left
-          .tl-wrap
-            .tl-content.box
-              .box-arrow
-              .box-header 学力診断 & 無料体験授業
-              .box-divider
-              .box-body
-                | 学習レベルを確認するため、学力診断テストを実施します。
-                | 学力や今回の課題に応じて適した授業を無料でご体験いただきます。
-                | お子様に体験いただくことにより、我々の授業の形態を理解いただくとともに、学習の意欲を高めていただくことが目的となります。
-        li.tl-item
-          .tl-wrap
-            .tl-content.box
-              .box-arrow
-              .box-header お見積り
-              .box-divider
-              .box-body
-                | 学力診断テスト、無料体験授業を経て、得られた情報から改めて適切なプランをご提案いたします。
-                | プランの内容、料金に関してご理解いただいた上でごお申し込みをいただきたいので、ご理解いただけるよう説明を差し上げます。
-        li.tl-item.tl-left
-          .tl-wrap
-            .tl-content.box
-              .box-arrow
-              .box-header お申し込み
-              .box-divider
-              .box-body
-                | 体験授業を受けていただき、ご納得いただけた方に限りお申し込みに進んでいただきます。
-                | 授業のスケジュール調整も行いますので、直近のご予定、ご希望のご予定を控えていただけるとスムーズです。
-        li.tl-item
-          .tl-wrap
-            .tl-content.box
-              .box-arrow
-              .box-header 授業開始！
-              .box-divider
-              .box-body
-                | ここまでお疲れさまでした。無事お申し込みも完了し、授業開始となります。
-                | ここからがスタートです。お子様、ご家族様と伴走し、学習が楽しくなる環境づくりに努めてまいります。
+.flow
+  .container
+    ul.timeline
+      li.tl-header
+      li.tl-item(
+        v-for="(f, index) in flow.fields.flows",
+        :class="{ 'tl-left': index % 2 == 1 }"
+      )
+        .tl-wrap
+          .tl-content.box
+            .box-arrow
+            .box-header {{ f.label }}
+            .box-divider
+            .box-body {{ f.body }}
 </template>
+
+<script>
+export default {
+  props: {
+    flow: {
+      type: Object,
+    },
+  },
+};
+</script>
 
 <style lang="sass" scoped>
 .timeline
