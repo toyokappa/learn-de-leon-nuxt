@@ -11,6 +11,13 @@
     )
     s-about(:about="aboutItem")
   section.section
+    p-section-header#content(
+      title="事業紹介",
+      subtitle="Service Lineup",
+      description="多方面から教育をサポート"
+    )
+    s-content(:flowItems="flowItems")
+  section.section
     p-section-header#profile(
       title="運営者・講師",
       subtitle="Member's Profile",
@@ -51,6 +58,7 @@ import PSectionHeader from "@/components/parts/SectionHeader";
 import PBlogLinkButton from "@/components/parts/BlogLinkButton";
 import SPageTop from "@/components/sections/PageTop";
 import SAbout from "@/components/sections/About";
+import SContent from "@/components/sections/Content";
 import SMember from "@/components/sections/Member";
 import SBlog from "@/components/sections/Blog";
 import SFlow from "@/components/sections/Flow";
@@ -64,6 +72,7 @@ export default {
     PBlogLinkButton,
     SPageTop,
     SAbout,
+    SContent,
     SMember,
     SBlog,
     SFlow,
