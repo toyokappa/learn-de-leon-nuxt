@@ -2,11 +2,18 @@
 .flow
   .container
     ul.menu
-      li.menu-item(v-for="flowItem in flowItems") {{ flowItem.fields.service }}
-    ul.timeline
+      li.menu-item(
+        v-for="flowItem in flowItems",
+        :class="{ selected: flowItem.fields.id === $store.state.content_id }",
+        @click="changeContent(flowItem.fields.id)"
+      ) {{ flowItem.fields.service }}
+    ul.timeline(
+      v-for="flowItem in flowItems",
+      v-if="flowItem.fields.id === $store.state.content_id"
+    )
       li.tl-header
       li.tl-item(
-        v-for="(flow, index) in flowItems[0].fields.flows",
+        v-for="(flow, index) in flowItem.fields.flows",
         :class="{ 'tl-left': index % 2 == 1 }"
       )
         .tl-wrap
@@ -22,6 +29,11 @@ export default {
   props: {
     flowItems: {
       type: Array,
+    },
+  },
+  methods: {
+    changeContent(id) {
+      this.$store.commit("changeContent", id);
     },
   },
 };
@@ -42,6 +54,9 @@ export default {
     border: 1px solid $accent-color
     margin: 0 20px
     cursor: pointer
+    &.selected
+      color: white
+      background-color: $accent-color
 .timeline
   padding: 0
   margin: 0
