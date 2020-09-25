@@ -1,17 +1,17 @@
 <template lang="pug">
-  #pageTop
-    hooper(:settings="hooperSettings")
-      slide
-        .page-top(v-lazy:backgroundImage="topImage1")
-          .title-area
-            .title-lg Learn de Leon
-            .subtitle 「やる」だけじゃない、思考力を育てる
-      slide
-        .page-top(v-lazy:backgroundImage="topImage2")
-          .title-area
-            .title-sm 教育を「エンタメ」に
-            .subtitle Education to Entertainment
-      hooper-pagination(slot="hooper-addons")
+#pageTop
+  hooper(:settings="hooperSettings")
+    slide
+      .page-top(v-lazy:backgroundImage="topImage1")
+        .title-area
+          .title-lg Learn de Leon
+          .subtitle 「やる」だけじゃない、思考力を育てる
+    slide
+      .page-top(v-lazy:backgroundImage="topImage2")
+        .title-area
+          .title-sm 教育を「エンタメ」に
+          .subtitle Education to Entertainment
+    hooper-pagination(slot="hooper-addons")
 </template>
 
 <script>
@@ -24,7 +24,7 @@ export default {
   components: {
     Hooper,
     Slide,
-    HooperPagination
+    HooperPagination,
   },
   data() {
     return {
@@ -38,12 +38,12 @@ export default {
         mouseDrag: false,
         touchDrag: false,
         shortDrag: false,
-        wheelControl: false
+        wheelControl: false,
       },
       topImage1,
-      topImage2
+      topImage2,
     };
-  }
+  },
 };
 </script>
 
@@ -57,7 +57,7 @@ export default {
         margin: 0 4px
         border-radius: 50%
         &.is-active, &:hover
-          background-color: #63AEE5
+          background-color: $accent-color
 </style>
 
 <style lang="sass" scoped>

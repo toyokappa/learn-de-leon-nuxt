@@ -1,8 +1,8 @@
 <template lang="pug">
-  .section-header
-    .section-title(:style="`color: ${titleColor};`") {{ title }}
-    .section-subtitle(:style="`color: ${subtitleColor};`") {{ subtitle }}
-    .section-description {{ description }}
+.section-header
+  .section-title(:style="`color: ${titleColor};`") {{ title }}
+  .section-subtitle(:style="`color: ${subtitleColor};`") {{ subtitle }}
+  .section-description {{ description }}
 </template>
 
 <script>
@@ -10,25 +10,25 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     subtitle: {
       type: String,
-      required: true
+      required: true,
     },
     description: {
       type: String,
-      require: true
+      require: true,
     },
     titleColor: {
       type: String,
-      default: "black"
+      default: "black",
     },
     subtitleColor: {
       type: String,
-      default: "black"
-    }
-  }
+      default: "black",
+    },
+  },
 };
 </script>
 
@@ -36,7 +36,7 @@ export default {
 .section-header
   text-align: center
   padding-top: 80px
-  padding-bottom: 150px
+  padding-bottom: 100px
   .section-title
     font-family: $ja-accent-family
     letter-spacing: 5px

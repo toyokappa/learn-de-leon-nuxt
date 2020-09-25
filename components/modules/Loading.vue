@@ -1,16 +1,16 @@
 <template lang="pug">
-  .loading-page(v-if="loading" ref="loading")
-    .spinner
-      .bounce1
-      .bounce2
-      .bounce3
+.loading-page(v-if="loading", ref="loading")
+  .spinner
+    .bounce1
+    .bounce2
+    .bounce3
 </template>
 
 <script>
 export default {
   data() {
     return {
-      loading: false
+      loading: false,
     };
   },
   methods: {
@@ -22,8 +22,8 @@ export default {
       setTimeout(() => {
         this.loading = false;
       }, 500);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -50,7 +50,7 @@ export default {
       display: inline-block
       width: 24px
       height: 24px
-      background-color: #63AEE5
+      background-color: $accent-color
       border-radius: 50%
       margin: 0 5px
       animation: sk-bounce-delay 1.4s infinite ease-in-out both

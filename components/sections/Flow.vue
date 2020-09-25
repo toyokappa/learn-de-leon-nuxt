@@ -1,31 +1,47 @@
 <template lang="pug">
 .flow
   .container
+    ul.menu
+      li.menu-item(v-for="flowItem in flowItems") {{ flowItem.fields.service }}
     ul.timeline
       li.tl-header
       li.tl-item(
-        v-for="(f, index) in flow.fields.flows",
+        v-for="(flow, index) in flowItems[0].fields.flows",
         :class="{ 'tl-left': index % 2 == 1 }"
       )
         .tl-wrap
           .tl-content.box
             .box-arrow
-            .box-header {{ f.label }}
+            .box-header {{ flow.label }}
             .box-divider
-            .box-body {{ f.body }}
+            .box-body {{ flow.body }}
 </template>
 
 <script>
 export default {
   props: {
-    flow: {
-      type: Object,
+    flowItems: {
+      type: Array,
     },
   },
 };
 </script>
 
 <style lang="sass" scoped>
+.menu
+  display: flex
+  justify-content: center
+  padding: 0
+  margin: 0 0 80px
+  list-style: none
+  .menu-item
+    color: $accent-color
+    font-size: 20px
+    font-weight: bold
+    padding: 15px 30px
+    border: 1px solid $accent-color
+    margin: 0 20px
+    cursor: pointer
 .timeline
   padding: 0
   margin: 0
@@ -57,7 +73,7 @@ export default {
         float: left
       .tl-content
         width: 100%
-        background-color: #63AEE5
+        background-color: $accent-color
         box-shadow: 0 0 1px rgba(0, 0, 0, 0.15)
         padding: 0.5rem 1rem
         margin-bottom: 1.5rem
@@ -84,7 +100,7 @@ export default {
             border-style: solid
             border-top-color: transparent
             border-bottom-color: transparent
-            border-right-color: #63AEE5
+            border-right-color: $accent-color
             border-left-color: transparent
             position: absolute
             top: 1px
@@ -110,7 +126,7 @@ export default {
             &:after
               border-width: 6px 0 6px 6px
               border-right-color: transparent
-              border-left-color: #63AEE5
+              border-left-color: $accent-color
               right: auto
               left: 0
   .box
