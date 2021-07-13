@@ -123,7 +123,7 @@ export default {
   },
   sitemap: {
     path: '/sitemap.xml',
-    hostname: 'https://learndeleon.com',
+    hostname: 'https://learndeleon.jp',
     gzip: true
   },
   /*
