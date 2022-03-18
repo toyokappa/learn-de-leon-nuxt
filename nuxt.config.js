@@ -1,5 +1,5 @@
 const host = "learndeleon.jp"
-const domain = `www.${host}`
+const domain = `${host}`
 const projectName = "ランデレオン"
 const pageTitle = `${projectName} | 公式サイト`
 const description =
