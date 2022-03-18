@@ -84,7 +84,7 @@ export default {
         { name: "twitter:title", content: pageTitle },
         { name: "twitter:description", content: description },
         { property: "og:title", content: pageTitle },
-        { property: "og:url", content: `https://${process.env.domain}/blogs/${this.$routes.params.id}` },
+        { property: "og:url", content: `https://${process.env.domain}/blogs/${this.$route.params.id}` },
         { property: "og:type", content: "article" },
         { property: "og:image", content: imageUrl },
         { property: "og:description", content: description },
