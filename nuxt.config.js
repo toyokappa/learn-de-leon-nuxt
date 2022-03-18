@@ -81,7 +81,6 @@ export default {
     { src: '~/plugins/contentful.js' },
     { src: '~/plugins/dateFormat.js' },
     { src: '~/plugins/mailgun.js' },
-    { src: '~/plugins/firebaseFunctions.js' },
     { src: '~/plugins/lazyLoad.js' },
   ],
   /*
