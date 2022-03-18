@@ -70,10 +70,45 @@ export default {
   methods: {
     async sendMail(e) {
       e.preventDefault();
+      const { name, email, message } = this.contactForm;
       this.$nuxt.$loading.start();
-      const mailer = this.$firebaseFunctions.httpsCallable("sendMail");
+      const mailOption = {
+        from: `${process.env.projectName} お問い合わせフォーム <info@${process.env.host}>`,
+        to: [email],
+        bcc: [process.env.mailTo, process.env.mailBCC],
+        subject: `【${process.env.projectName}】お問い合わせを受け付けました`,
+        text: `
+以下の内容でホームページよりお問い合わせを受け付けました。
+必要に応じて担当から折り返しますので今しばらくお待ち下さい。
+
+---
+# お名前
+${name} 様
+
+# 連絡先
+${email}
+
+# 内容
+${message}
+---
+
+引き続き${process.env.projectName}をよろしくおねがいします！
+
+※ コチラのメールへの返信は受け付けておりません。
+
+====================================
+
+# ${process.env.projcetName} 公式サイト
+https://${process.env.host}
+
+====================================
+`,
+      };
       try {
-        await mailer(this.contactForm);
+        await this.$mgClient.messages.create(
+          `mg.${process.env.host}`,
+          mailOption
+        );
         this.$toast.success(
           "お問い合わせを受け付けました。ありがとうございました。",
           { duration: 5000 }

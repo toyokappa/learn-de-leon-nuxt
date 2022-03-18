@@ -126,6 +126,7 @@ export default {
         { name: "twitter:title", content: pageTitle },
         { name: "twitter:description", content: description },
         { property: "og:title", content: pageTitle },
+        { property: "og:url", content: `https://${process.env.domain}` },
         { property: "og:type", content: "website" },
         { property: "og:image", content: imageUrl },
         { property: "og:description", content: description },

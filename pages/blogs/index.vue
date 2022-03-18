@@ -70,15 +70,19 @@ export default {
     return {
       title: pageTitle,
       meta: [
-        { name: "description", content: description },
+        { hid: "description", name: "description", content: description },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:image", content: imageUrl },
         { name: "twitter:title", content: pageTitle },
         { name: "twitter:description", content: description },
         { property: "og:title", content: pageTitle },
+        { property: "og:url", content: `https://${process.env.domain}/blogs` },
         { property: "og:type", content: "website" },
         { property: "og:image", content: imageUrl },
         { property: "og:description", content: description }
+      ],
+      link: [
+        { rel: 'canonical', href: `https://${process.env.domain}/blogs` }
       ]
     };
   }

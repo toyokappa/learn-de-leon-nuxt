@@ -78,15 +78,19 @@ export default {
     return {
       title: pageTitle,
       meta: [
-        { name: "description", content: this.blogPost.fields.description },
+        { hid: 'description', name: 'description', content: this.blogPost.fields.description },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:image", content: imageUrl },
         { name: "twitter:title", content: pageTitle },
         { name: "twitter:description", content: description },
         { property: "og:title", content: pageTitle },
+        { property: "og:url", content: `https://${process.env.domain}/blogs/${this.$routes.params.id}` },
         { property: "og:type", content: "article" },
         { property: "og:image", content: imageUrl },
-        { property: "og:description", content: description }
+        { property: "og:description", content: description },
+      ],
+      link: [
+        { rel: 'canonical', href: `https://${process.env.domain}/blogs/${this.$route.params.id}` }
       ]
     };
   }

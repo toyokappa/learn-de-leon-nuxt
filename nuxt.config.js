@@ -1,3 +1,9 @@
+const host = "learndeleon.jp"
+const domain = `www.${host}`
+const projectName = "ランデレオン"
+const pageTitle = `${projectName} | 公式サイト`
+const description =
+  "群馬県邑楽郡にて家庭教師事業を展開しているランデレオンの公式サイトです。教育における想い、運営者紹介、サービス体系紹介などをお届けしております。";
 const pageLimit = 10
 
 const fetchBlogRes = async () => {
@@ -19,13 +25,17 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    htmlAttrs: {
+      lang: 'ja'
+    },
+    title: pageTitle,
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1.0' },
       { name: 'msapplication-TileColor', content: '#ff0000' },
       { name: 'theme-color', content: '#ff0000' },
-      { name: 'keywords', content: 'ランデレオン, learn de leon, 群馬 家庭教師, 邑楽 家庭教師, 教育 エンタメ' }
+      { name: 'keywords', content: 'ランデレオン, learn de leon, 群馬 家庭教師, 邑楽 家庭教師, 教育 エンタメ' },
+      { hid: 'description', name: 'description', content: description },
     ],
     link: [
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
@@ -35,18 +45,21 @@ export default {
       { rel: 'mask-icon', href: 'safari-pinned-tab.svg', color: '#63aee5' },
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.6.1/css/all.css' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:100,200,300,400,700' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Sawarabi+Mincho' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Sawarabi+Mincho' },
+      { rel: 'canonical', href: `https://${domain}` }
     ]
   },
   env: {
-    firebaseApiKey: process.env.FIREBASE_API_KEY,
-    firebaseAuthDomain: process.env.FIREBASE_AUTH_DOMAIN,
-    firebaseDatabaseURL: process.env.FIREBASE_DATABASE_URL,
-    firebaseProjectId: process.env.FIREBASE_PROJECT_ID,
-    firebaseStorageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-    firebaseMessageingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
     ctfSpaceId: process.env.CTF_SPACE_ID,
     ctfCdaAccessToken: process.env.CTF_CDA_ACCESS_TOKEN,
+    mailgunKey: process.env.MAILGUN_KEY,
+    mailTo: process.env.MAIL_TO,
+    mailBCC: process.env.MAIL_BCC,
+    host,
+    domain,
+    projectName,
+    pageTitle,
+    description,
     pageLimit
   },
   /*
@@ -67,6 +80,7 @@ export default {
     { src: '~/plugins/burgerButton.js', ssr: false },
     { src: '~/plugins/contentful.js' },
     { src: '~/plugins/dateFormat.js' },
+    { src: '~/plugins/mailgun.js' },
     { src: '~/plugins/firebaseFunctions.js' },
     { src: '~/plugins/lazyLoad.js' },
   ],
