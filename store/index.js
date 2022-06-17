@@ -1,5 +1,5 @@
 export const state = () => ({
-  content_id: 1
+  content_id: 2
 })
 
 export const mutations = {
