@@ -2,7 +2,7 @@
   .paging
     ol.list(v-if="totalPages > 1")
       li.item(v-for="page in totalPages" :key="page")
-        n-link.link(:to="`/blogs/page/${page}`" :class="{ active: isActivePage(page) }") {{ page }}
+        n-link.link(:to="`/blogs/page/${page}/`" :class="{ active: isActivePage(page) }") {{ page }}
 </template>
 
 <script>

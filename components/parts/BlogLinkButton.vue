@@ -1,7 +1,7 @@
 <template lang="pug">
   .blog-link-button
     .container
-      n-link.blog-link(to="/blogs")
+      n-link.blog-link(to="/blogs/")
         span Go to 
         strong Learn de Leon's Blog
         i.fas.fa-angle-double-right.ml-2

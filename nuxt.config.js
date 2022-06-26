@@ -98,7 +98,8 @@ export default {
     '@nuxtjs/markdownit',
     '@nuxtjs/sitemap',
     ['vue-scrollto/nuxt', { duration: 500 }],
-    '@/modules/paging.js'
+    '@/modules/paging.js',
+    '@nuxtjs/redirect-module',
   ],
   styleResources: {
     sass: [
@@ -112,10 +113,10 @@ export default {
       const totalPages = Math.ceil(blogRes.total / pageLimit);
       const pageRange = [...Array(totalPages).keys()]
       let urls = pageRange.map(pageNum => ({
-        route: `/blogs/page/${pageNum + 1}`
+        route: `/blogs/page/${pageNum + 1}/`
       }))
       urls = urls.concat(blogRes.items.map(item => ({
-        route: `/blogs/${item.sys.id}`,
+        route: `/blogs/${item.sys.id}/`,
         payload: item
       })))
       return urls
@@ -137,8 +138,16 @@ export default {
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://learndeleon.jp',
-    gzip: true
+    gzip: true,
+    trailingSlash: true,
   },
+  redirect: [
+    {
+      from: '^(\\/[^\\?]*[^\\/])(\\?.*)?$',
+      to: '$1/$2',
+      statusCode: 301
+    }
+  ],
   /*
    ** Build configuration
    */
@@ -148,4 +157,7 @@ export default {
      */
     extend(config, ctx) { },
   },
+  router: {
+    trailingSlash: true,
+  }
 }

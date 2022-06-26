@@ -5,7 +5,7 @@
         .row
           .col-6
             .next-post(v-if="nextPost")
-              n-link(:to="`/blogs/${nextPost.sys.id}`")
+              n-link(:to="`/blogs/${nextPost.sys.id}/`")
                 .post-image(v-lazy:background-image="nextPost.fields.eyecatch.fields.file.url")
                 .post-title {{ nextPost.fields.title }}
                 .post-created-at
@@ -13,7 +13,7 @@
                   span {{ parseCreatedAt(nextPost.sys.createdAt) }}
           .col-6
             .prev-post(v-if="prevPost")
-              n-link(:to="`/blogs/${prevPost.sys.id}`")
+              n-link(:to="`/blogs/${prevPost.sys.id}/`")
                 .post-image(v-lazy:background-image="prevPost.fields.eyecatch.fields.file.url")
                 .post-title {{ prevPost.fields.title }}
                 .post-created-at
